@@ -297,7 +297,7 @@ const savedTheme = localStorage.getItem(THEME_KEY);
 if (savedTheme === 'dark' || savedTheme === 'light') {
   setTheme(savedTheme);
 } else {
-  setTheme('light');
+  setTheme('dark');
 }
 
 if (themeToggle) {

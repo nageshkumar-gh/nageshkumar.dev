@@ -302,15 +302,18 @@ body.dark-mode nav {
 .section-alt { background: var(--bg-alt); }
 
 .section-header {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .section-label {
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-hint);
+  letter-spacing: 0.07em;
+  line-height: 1;
+  color: var(--text);
 }
 
 /* =====================
@@ -323,12 +326,39 @@ body.dark-mode nav {
 }
 
 .skill-group h3 {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-hint);
   margin-bottom: 10px;
+}
+
+.skill-group,
+.project-card,
+.exp-card,
+.edu-card,
+.contact-card {
+  position: relative;
+}
+
+.skill-group {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.skill-group:hover,
+.project-card:hover,
+.exp-card:hover,
+.edu-card:hover,
+.contact-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.12);
+  transform: translateY(-2px);
 }
 
 .chips {
