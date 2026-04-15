@@ -1,4 +1,4 @@
-# Hi, I'm Nagesh Kumar 👋
+# Hi, I'm Nagesh Kumar
 ### Senior QA Engineer & SDET · Dublin, Ireland
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-nageshkumar.dev-blue?style=flat&logo=google-chrome)](https://nageshkumar.dev)
@@ -8,7 +8,7 @@
 Playwright/TypeScript, Selenium/Java, and AI/LLM quality evaluation.
 Previously led QA teams at Vodafone UK and Accenture Singapore.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ![Playwright](https://img.shields.io/badge/Playwright-TypeScript-2EAD33?logo=playwright)
 ![Selenium](https://img.shields.io/badge/Selenium-Java-43B02A?logo=selenium)
@@ -17,7 +17,7 @@ Previously led QA teams at Vodafone UK and Accenture Singapore.
 ![Docker](https://img.shields.io/badge/Docker-AWS_EC2-2496ED?logo=docker)
 
 
-## 🚀 Featured Projects
+## Featured Projects
 
 | Project | Description | Stack |
 |---|---|---|
@@ -29,6 +29,6 @@ Previously led QA teams at Vodafone UK and Accenture Singapore.
 | [ci-cd-testing-pipelines](link) | QA gates, test orchestration, deployment confidence | GitHub Actions · CI/CD |
 
 
-## 💼 Currently Open To
+## Currently Open To
 Senior/Lead QA · SDET · AI-focused QA roles in Ireland  
 📩 nagesh.kumar5@outlook.com
