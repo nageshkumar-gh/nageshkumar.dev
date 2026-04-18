@@ -255,23 +255,31 @@ if (toggle && navLinks) {
 // =====================
 // ACTIVE NAV ON SCROLL
 // =====================
-const sections = document.querySelectorAll('section[id]');
 const links = document.querySelectorAll('.nav-links a');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      links.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + entry.target.id) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-}, { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' });
+const anchors = Array.from(links)
+  .map(l => ({ link: l, id: l.getAttribute('href').replace('#', ''), el: document.getElementById(l.getAttribute('href').replace('#', '')) }))
+  .filter(a => a.el)
+  .sort((a, b) => a.el.compareDocumentPosition(b.el) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
 
-sections.forEach(s => observer.observe(s));
+function updateActiveNav() {
+  const navHeight = document.querySelector('nav')?.offsetHeight || 52;
+  const scrollY = window.scrollY;
+  const atBottom = scrollY + window.innerHeight >= document.body.scrollHeight - 10;
+  let activeId = atBottom ? anchors[anchors.length - 1].id : null;
+  if (!atBottom) {
+    const threshold = navHeight + Math.round(window.innerHeight * 0.25);
+    anchors.forEach(({ id, el }) => {
+      if (el.getBoundingClientRect().top <= threshold) activeId = id;
+    });
+  }
+  links.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
 
 const style = document.createElement('style');
 style.textContent = '.nav-links a.active { color: var(--accent); }';
