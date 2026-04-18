@@ -283,13 +283,15 @@ document.head.appendChild(style);
 const themeToggle = document.getElementById('themeToggle');
 const THEME_KEY = 'preferred-theme';
 
+const moonIcon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+const sunIcon  = `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+
 function setTheme(mode) {
   document.body.classList.toggle('dark-mode', mode === 'dark');
-  if (themeToggle) {
-    const next = mode === 'dark' ? 'Light' : 'Dark';
-    const label = mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-    themeToggle.textContent = next;
-    themeToggle.setAttribute('aria-label', label);
+  const icon = document.getElementById('themeIcon');
+  if (themeToggle && icon) {
+    icon.innerHTML = mode === 'dark' ? moonIcon : sunIcon;
+    themeToggle.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   }
 }
 
@@ -309,21 +311,60 @@ if (themeToggle) {
 }
 
 // =====================
-// SCROLL FADE IN
+// NAV PROGRESS BAR
 // =====================
-const cards = document.querySelectorAll('.project-card, .exp-card');
+const navProgress = document.getElementById('navProgress');
+function runNavProgress() {
+  if (!navProgress) return;
+  navProgress.classList.remove('running');
+  void navProgress.offsetWidth; // force reflow to restart animation
+  navProgress.classList.add('running');
+}
+document.querySelectorAll('.nav-links a, .logo').forEach(link => {
+  link.addEventListener('click', runNavProgress);
+});
+
+// =====================
+// PROJECTS NAV LINK — custom scroll offset
+// =====================
+document.querySelector('a[href="#projects"]')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const target = document.getElementById('projects');
+  if (!target) return;
+  const navHeight = document.querySelector('nav')?.offsetHeight || 52;
+  const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+  window.scrollTo({ top, behavior: 'smooth' });
+});
+
+// =====================
+// BACK TO TOP
+// =====================
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 300);
+});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// =====================
+// SCROLL FADE IN (staggered)
+// =====================
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('card-visible');
+      fadeObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
-cards.forEach(card => {
-  card.style.opacity = '0';
-  card.style.transform = 'translateY(12px)';
-  card.style.transition = 'opacity 0.4s ease, transform 0.4s ease, border-color 0.2s, box-shadow 0.2s';
+document.querySelectorAll('.project-card').forEach((card, i) => {
+  card.style.transitionDelay = (i * 80) + 'ms';
+  card.classList.add('card-hidden');
+  fadeObserver.observe(card);
+});
+
+document.querySelectorAll('.exp-card').forEach((card, i) => {
+  card.style.transitionDelay = (i * 80) + 'ms';
+  card.classList.add('card-hidden');
   fadeObserver.observe(card);
 });
