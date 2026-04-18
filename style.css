@@ -1030,10 +1030,12 @@ footer p {
 
   .theme-toggle {
     order: 2;
+    margin-left: auto;
   }
 
   .nav-toggle {
     order: 3;
+    margin-left: 10px;
   }
 
   .nav-links {
