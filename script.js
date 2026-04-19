@@ -17,18 +17,18 @@ const projects = {
     github: 'https://github.com/nageshkumar'
   },
   'playwright-suite': {
-    badge: 'E2E UI Testing',
+    badge: 'UI Testing',
     badgeClass: 'badge-blue',
-    title: 'enterprise-playwright-ts-suite',
-    desc: 'A robust enterprise E2E UI testing framework with reusable fixtures, stable selectors, and environment-aware execution.',
+    title: 'playwright-framework',
+    desc: 'UI test automation platform built with Playwright & TypeScript, targeting OrangeHRM, a real-world HR management application. Tests run locally, in Docker, and inside a Kubernetes cluster via GitHub Actions CI/CD',
     focus: [
       'Scalable Playwright architecture using TypeScript',
       'Reusable fixtures and test utilities for faster authoring',
-      'Cross-environment execution for reliable regression cycles',
-      'Automated reporting for release visibility'
+      'Cross-environment execution: local, Docker, and Kubernetes',
+      'GitHub Actions CI/CD integration for automated test runs'
     ],
-    stack: ['Playwright', 'TypeScript', 'UI Automation'],
-    github: 'https://github.com/nageshkumar'
+    stack: ['Playwright', 'TypeScript', 'UI Automation', 'Docker', 'Kubernetes', 'CI/CD'],
+    github: 'https://github.com/nageshkumar-gh/playwright-framework'
   },
   'api-platform': {
     badge: 'API Testing',
