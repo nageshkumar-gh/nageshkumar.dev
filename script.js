@@ -14,7 +14,7 @@ const projects = {
       'Automated evaluations in CI pipelines'
     ],
     stack: ['TypeScript', 'GitHub Actions', 'Claude API'],
-    github: 'https://github.com/nageshkumar'
+    github: 'https://github.com/nageshkumar-gh'
   },
   'playwright-suite': {
     badge: 'UI Testing',
@@ -42,7 +42,7 @@ const projects = {
       'Actionable test reports for API quality gates'
     ],
     stack: ['RestAssured', 'Java', 'API Automation'],
-    github: 'https://github.com/nageshkumar'
+    github: 'https://github.com/nageshkumar-gh'
   },
   'bdd-framework': {
     badge: 'BDD',
@@ -56,7 +56,7 @@ const projects = {
       'Improved requirement traceability'
     ],
     stack: ['Cucumber', 'BDD', 'Gherkin'],
-    github: 'https://github.com/nageshkumar'
+    github: 'https://github.com/nageshkumar-gh'
   },
   'qa-strategy': {
     badge: 'QA Leadership',
@@ -70,7 +70,7 @@ const projects = {
       'Leadership-level reporting support'
     ],
     stack: ['Quality Metrics', 'QA Strategy', 'Leadership'],
-    github: 'https://github.com/nageshkumar'
+    github: 'https://github.com/nageshkumar-gh'
   },
   'cicd-testing': {
     badge: 'CI/CD Ownership',
@@ -84,7 +84,7 @@ const projects = {
       'Failure diagnostics for rapid triage'
     ],
     stack: ['GitHub Actions', 'CI/CD', 'Quality Gates'],
-    github: 'https://github.com/nageshkumar'
+    github: 'https://github.com/nageshkumar-gh'
   }
 };
 
