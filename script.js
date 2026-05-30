@@ -58,20 +58,20 @@ const projects = {
     stack: ['Cucumber', 'BDD', 'Gherkin'],
     github: 'https://github.com/nageshkumar-gh'
   },
-  'qa-strategy': {
-    badge: 'QA Leadership',
-    badgeClass: 'badge-amber',
-    title: 'qa-strategy-and-metrics-toolkit',
-    desc: 'A toolkit for quality strategy planning, test health monitoring, and KPI-driven QA leadership decisions.',
-    focus: [
-      'Test strategy templates for multiple delivery models',
-      'Quality metric definitions and tracking views',
-      'Release readiness indicators and risk signals',
-      'Leadership-level reporting support'
-    ],
-    stack: ['Quality Metrics', 'QA Strategy', 'Leadership'],
-    github: 'https://github.com/nageshkumar-gh'
-  },
+  // 'qa-strategy': {
+  //   badge: 'QA Leadership',
+  //   badgeClass: 'badge-amber',
+  //   title: 'qa-strategy-and-metrics-toolkit',
+  //   desc: 'A toolkit for quality strategy planning, test health monitoring, and KPI-driven QA leadership decisions.',
+  //   focus: [
+  //     'Test strategy templates for multiple delivery models',
+  //     'Quality metric definitions and tracking views',
+  //     'Release readiness indicators and risk signals',
+  //     'Leadership-level reporting support'
+  //   ],
+  //   stack: ['Quality Metrics', 'QA Strategy', 'Leadership'],
+  //   github: 'https://github.com/nageshkumar-gh'
+  // },
   'cicd-testing': {
     badge: 'CI/CD Ownership',
     badgeClass: 'badge-blue',
