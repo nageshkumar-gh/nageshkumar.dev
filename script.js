@@ -72,20 +72,20 @@ const projects = {
   //   stack: ['Quality Metrics', 'QA Strategy', 'Leadership'],
   //   github: 'https://github.com/nageshkumar-gh'
   // },
-  'cicd-testing': {
-    badge: 'CI/CD Ownership',
-    badgeClass: 'badge-blue',
-    title: 'ci-cd-testing-pipelines',
-    desc: 'CI/CD-oriented testing pipelines that enforce quality gates and speed up release confidence.',
-    focus: [
-      'Automated test stages wired into deployment flow',
-      'Pipeline quality gates for build promotion',
-      'Parallel test orchestration for faster feedback',
-      'Failure diagnostics for rapid triage'
-    ],
-    stack: ['GitHub Actions', 'CI/CD', 'Quality Gates'],
-    github: 'https://github.com/nageshkumar-gh'
-  }
+  // 'cicd-testing': {
+  //   badge: 'CI/CD Ownership',
+  //   badgeClass: 'badge-blue',
+  //   title: 'ci-cd-testing-pipelines',
+  //   desc: 'CI/CD-oriented testing pipelines that enforce quality gates and speed up release confidence.',
+  //   focus: [
+  //     'Automated test stages wired into deployment flow',
+  //     'Pipeline quality gates for build promotion',
+  //     'Parallel test orchestration for faster feedback',
+  //     'Failure diagnostics for rapid triage'
+  //   ],
+  //   stack: ['GitHub Actions', 'CI/CD', 'Quality Gates'],
+  //   github: 'https://github.com/nageshkumar-gh'
+  // }
 };
 
 const experiences = {
