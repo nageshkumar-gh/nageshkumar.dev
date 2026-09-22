@@ -89,70 +89,67 @@ const projects = {
 };
 
 const experiences = {
-  'testlead-nlt': {
+  'programware-lead': {
     badge: 'Leadership',
     badgeClass: 'badge-blue',
-    title: 'Test Lead - NLT Singapore',
-    desc: 'Led QA delivery for enterprise applications and drove automation adoption across the team.',
+    title: 'Lead QA Automation Engineer - Programware',
+    desc: 'Leading QA automation strategy for microservice changes, championing shift-left testing and CI-driven quality gates.',
     focus: [
-      'Defined QA strategy and sprint-level quality goals',
-      'Scaled Selenium and API automation coverage',
-      'Integrated automated checks into CI/CD pipelines',
-      'Coordinated test planning and release sign-off with stakeholders'
+      'Championed Shift-Left testing by using API mocking (WireMock, Postman) to build and execute automated tests in parallel with active development',
+      'Automated front-end and back-end flows using Playwright and Unix scripting, achieving 80% regression and 50% progression test coverage',
+      'Triaged and escalated critical defects, running cross-functional sessions with developers, designers, and domain experts to drive fixes to closure',
+      'Analysed user story requirements to identify test scenarios and coverage during capacity planning and test prep'
     ],
-    stack: ['Selenium / Java', 'RestAssured', 'CI/CD', 'Leadership']
+    stack: ['Playwright', 'WireMock', 'Postman', 'Unix Scripting', 'Shift-Left']
   },
-  'testlead-vf': {
+  'lead-test-engineer': {
     badge: 'Leadership',
     badgeClass: 'badge-purple',
-    title: 'Test Lead - Vodafone UK',
-    desc: 'Managed a QA function focused on API and integration quality for high-impact releases.',
+    title: 'Lead Test Engineer - Accenture (Client: Vodafone UK)',
+    desc: 'Owned end-to-end test strategy, planning, execution, automation, and go-live support across standalone projects for Vodafone UK.',
     focus: [
-      'Led a team of testers across agile delivery streams',
-      'Built reusable automation assets for API test cycles',
-      'Improved test reliability and reporting visibility',
-      'Partnered with developers to shorten defect turnaround time'
+      'Prevented revenue leakage by identifying a defect allowing 100% discounted usage during active credit breaches, raising a strategic CR',
+      'Prevented billing defects from reaching production across 4 consecutive releases with zero rollback-related incidents',
+      'Produced Early Live Support test plans for 8+ urgent post-release hotfixes and rollbacks per release, ensuring zero P1 defects after go-live',
+      'Led small teams of 2-3 across 5 standalone projects: application upgrade, cloud infrastructure change, data migration, GDPR data purging, and commercial launch'
     ],
-    stack: ['RestAssured', 'TestNG', 'Postman', 'API Testing']
+    stack: ['Test Strategy', 'Billing Systems', 'Release Risk Assessment', 'Team Lead']
   },
-  'senior-ste': {
+  'senior-qa-engineer': {
     badge: 'Senior Role',
     badgeClass: 'badge-amber',
-    title: 'Senior Software Test Engineer',
-    desc: 'Designed and maintained robust automation suites with a strong focus on quality gates and mentoring.',
+    title: 'Senior QA Engineer - Accenture (Client: NLT Singapore)',
+    desc: 'Built BDD automation frameworks and backend validation scripts, integrating them into CI workflows.',
     focus: [
-      'Built maintainable UI and API automation frameworks',
-      'Improved regression coverage and reduced manual effort',
-      'Reviewed test design quality and coding standards',
-      'Mentored engineers on debugging and root-cause analysis'
+      'Built BDD automation frameworks using Cucumber, TestNG, Selenium, and Serenity, integrated with CI for sanity and regression testing',
+      'Developed Unix shell scripts to automate backend batch job execution and DB output validation, cutting a 3-day ETL cycle down to 1 day',
+      'Identified an Oracle product limitation affecting tax adjustments and validated a workaround that enabled a smooth go-live',
+      'Maintained execution dashboards in HPQC and Azure DevOps, providing real-time visibility to stakeholders'
     ],
-    stack: ['Selenium / Java', 'RestAssured', 'Test Design', 'Mentoring']
+    stack: ['Cucumber / BDD', 'Selenium / Serenity', 'Unix Shell Scripting', 'Azure DevOps']
   },
-  ste: {
+  'qa-engineer': {
     badge: 'Core QA',
     badgeClass: 'badge-blue',
-    title: 'Software Test Engineer',
-    desc: 'Delivered high-quality test execution across functional and integration areas in agile releases.',
+    title: 'QA Engineer - Accenture',
+    desc: 'Delivered functional, regression, and integration testing across Siebel CRM and billing platforms.',
     focus: [
-      'Prepared and executed detailed test cases',
-      'Performed integration and regression testing',
-      'Tracked defects with clear reproduction evidence',
-      'Collaborated with developers during issue triage'
+      'Validated backend batch resilience through failover testing, missing upstream file scenarios, and retry logic validation',
+      'Delivered functional, regression, and integration testing across Siebel CRM and billing platforms, building strong domain expertise',
+      'Performed impact analysis to optimise regression scope based on change requests and production incidents'
     ],
-    stack: ['Functional Testing', 'Integration Testing', 'Defect Tracking', 'Documentation']
+    stack: ['Failover Testing', 'Siebel CRM', 'Regression Testing', 'Impact Analysis']
   },
-  'test-associate': {
+  'qa-associate': {
     badge: 'Early Career',
     badgeClass: 'badge-purple',
-    title: 'Test Associate',
+    title: 'QA Associate - Accenture',
     desc: 'Supported the QA lifecycle through thorough test execution and disciplined defect reporting.',
     focus: [
-      'Executed smoke and sanity test cycles',
-      'Logged and verified defects using tracking tools',
-      'Maintained traceability between requirements and tests',
-      'Supported release readiness checks with senior QA members'
+      'Executed manual and automated testing for CRM workflows, order journeys, and billing systems across Siebel and Unix interfaces',
+      'Logged, tracked, and triaged defects in Jira, ensuring SLA compliance and timely developer resolution'
     ],
-    stack: ['Smoke Testing', 'Bug Reporting', 'Test Execution', 'QA Fundamentals']
+    stack: ['Manual Testing', 'CRM Workflows', 'Jira', 'QA Fundamentals']
   }
 };
 
