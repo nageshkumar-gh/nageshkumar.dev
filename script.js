@@ -233,7 +233,115 @@ overlay.addEventListener('click', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') {
+    closeModal();
+    closeContactModal();
+  }
+});
+
+// =====================
+// CONTACT MODAL
+// =====================
+// Get a free access key at https://web3forms.com (enter the inbox email you want messages sent to).
+// The key only allows sending to that inbox, so it is safe to publish; your email address is never exposed.
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+
+const contactOverlay = document.getElementById('contactModal');
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+const contactSubmit = document.getElementById('contactSubmit');
+let contactLastFocus = null;
+
+function openContactModal() {
+  contactLastFocus = document.activeElement;
+  contactOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('contactName').focus();
+}
+
+function closeContactModal() {
+  if (!contactOverlay.classList.contains('open')) return;
+  contactOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+  if (contactLastFocus) contactLastFocus.focus();
+}
+
+function setContactStatus(text, type) {
+  contactStatus.textContent = text;
+  contactStatus.className = 'form-status' + (type ? ' ' + type : '');
+}
+
+function validateContactForm() {
+  let valid = true;
+  contactForm.querySelectorAll('input[required], textarea[required]').forEach(field => {
+    const ok = field.value.trim() !== '' && field.checkValidity();
+    field.closest('.form-field').classList.toggle('invalid', !ok);
+    if (!ok && valid) field.focus();
+    valid = valid && ok;
+  });
+  return valid;
+}
+
+document.querySelectorAll('[data-open-contact]').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    openContactModal();
+  });
+});
+
+document.getElementById('contactModalClose').addEventListener('click', closeContactModal);
+document.getElementById('contactCancel').addEventListener('click', closeContactModal);
+
+contactOverlay.addEventListener('click', (e) => {
+  if (e.target === contactOverlay) closeContactModal();
+});
+
+contactForm.addEventListener('input', (e) => {
+  const field = e.target.closest('.form-field');
+  if (field) field.classList.remove('invalid');
+});
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!validateContactForm()) {
+    setContactStatus('Please fill in your name, a valid email and a message.', 'error');
+    return;
+  }
+
+  const fields = contactForm.elements;
+  const name = fields.name.value.trim();
+  const email = fields.email.value.trim();
+  const message = fields.message.value.trim();
+
+  contactSubmit.disabled = true;
+  contactSubmit.textContent = 'Sending…';
+  setContactStatus('');
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: 'Portfolio message from ' + name,
+        from_name: 'nageshkumar.dev',
+        name: name,
+        email: email,
+        replyto: email,
+        message: message,
+        botcheck: fields.botcheck.checked
+      })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.success) throw new Error(data.message || 'Request failed');
+    contactForm.reset();
+    setContactStatus('Thanks, ' + name + '! Your message has been sent. I\'ll be in touch soon.', 'success');
+  } catch (err) {
+    setContactStatus('Sorry, something went wrong. Please try again or reach me on LinkedIn.', 'error');
+  } finally {
+    contactSubmit.disabled = false;
+    contactSubmit.textContent = 'Send message';
+  }
 });
 
 // =====================
