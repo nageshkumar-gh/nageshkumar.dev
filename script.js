@@ -244,7 +244,7 @@ document.addEventListener('keydown', (e) => {
 // =====================
 // Get a free access key at https://web3forms.com (enter the inbox email you want messages sent to).
 // The key only allows sending to that inbox, so it is safe to publish; your email address is never exposed.
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+const WEB3FORMS_ACCESS_KEY = 'f53fcdda-ad06-4c03-9b0b-3a1fa28e5524';
 
 const contactOverlay = document.getElementById('contactModal');
 const contactForm = document.getElementById('contactForm');
